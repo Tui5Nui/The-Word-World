@@ -45,6 +45,7 @@
           $gameMessage.add(" ส่งข้อมูลล้มเหลว (" + xhr.status + ")");
         }
       };
+      $gameMessage.add("กำลังส่ง: ");
       xhr.send(JSON.stringify(data));
     }
   };
