@@ -1,6 +1,6 @@
 (function () {
   var url =
-    "https://script.google.com/macros/s/AKfycbyY0eZRaVhLyZmLI3igRGK-BJf38qQeQE6OH_eXiEVGvPbZ-G7LeuT1UeV1poBp7mnb/exec";
+    "https://script.google.com/macros/s/AKfycbw2mjO0uRrcK7h-FjXxRqSA-Va1dpJP2H3vWSjRXCZDB2Iot3dOEVBAkaRwt8Bb-2Pr/exec";
 
   // ✅ ใช้กับ RPG Maker MV
   var _Game_Interpreter_pluginCommand =
@@ -45,7 +45,6 @@
           $gameMessage.add(" ส่งข้อมูลล้มเหลว (" + xhr.status + ")");
         }
       };
-      $gameMessage.add("กำลังส่ง: ");
       xhr.send(JSON.stringify(data));
     }
   };
