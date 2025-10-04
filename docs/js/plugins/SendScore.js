@@ -1,5 +1,5 @@
 (function() {
-    var url = "https://script.google.com/macros/s/AKfycby6IVuVW8Mmibpwnp0cIs2_Q2KkMHivHtDjFZjhrjs0LO2-FBP2JVIqJaQgdlLOARN5/exec";
+    var url = "https://script.google.com/macros/s/AKfycbw2mjO0uRrcK7h-FjXxRqSA-Va1dpJP2H3vWSjRXCZDB2Iot3dOEVBAkaRwt8Bb-2Pr/exec";
 
     // ✅ ใช้กับ RPG Maker MV
     var _Game_Interpreter_pluginCommand = Game_Interpreter.prototype.pluginCommand;
