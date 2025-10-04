@@ -30,22 +30,19 @@
       $gameMessage.add("ด่าน: " + stage);
       $gameMessage.add("วันที่: " + date);
 
-      // ✅ ส่งไป Google Apps Script
       var xhr = new XMLHttpRequest();
-      xhr.open("POST", url);
+      xhr.open("POST", url, true);
       xhr.setRequestHeader("Content-Type", "application/json");
+      xhr.timeout = 15000;
 
-      // ✅ ส่วนตรวจสอบผลลัพธ์การส่ง
-      xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4) {
-          // การส่งเสร็จสมบูรณ์
-          if (xhr.status === 200) {
-            console.log("ส่งข้อมูลสำเร็จ!", xhr.responseText);
-            $gameMessage.add("✅ ส่งข้อมูลสำเร็จ!");
-          } else {
-            console.error("ส่งข้อมูลล้มเหลว", xhr.status, xhr.responseText);
-            $gameMessage.add("❌ ส่งข้อมูลล้มเหลว!");
-          }
+      xhr.onload = function () {
+        // ได้ response กลับมาแน่นอน
+        if (xhr.status === 200) {
+          console.log("ส่งข้อมูลสำเร็จ!", xhr.responseText);
+          $gameMessage.add(" ส่งข้อมูลสำเร็จ!");
+        } else {
+          console.error("สถานะไม่ใช่ 200:", xhr.status, xhr.responseText);
+          $gameMessage.add(" ส่งข้อมูลล้มเหลว (" + xhr.status + ")");
         }
       };
       xhr.send(JSON.stringify(data));
