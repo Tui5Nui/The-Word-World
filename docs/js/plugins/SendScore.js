@@ -1,5 +1,5 @@
 (function() {
-    var url = "https://script.google.com/macros/s/AKfycbzX5VcdO9iD4Edz_mrJ0_aHRXFah4Oj2AFxB4a7A9DzEEUF_nlGfPZJ9vNvv25l4I_D/exec";
+    var url = "https://script.google.com/macros/s/AKfycby6IVuVW8Mmibpwnp0cIs2_Q2KkMHivHtDjFZjhrjs0LO2-FBP2JVIqJaQgdlLOARN5/exec";
 
     PluginManager.registerCommand('SendScore', 'send', args => {
         var playerName = $gameActors.actor(1).name();   // ดึงชื่อจาก Actor #1
