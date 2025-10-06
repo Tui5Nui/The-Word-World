@@ -1,6 +1,5 @@
 (function () {
-  var url =
-    "https://script.google.com/macros/s/AKfycbwf_-zSUiG2oyo6OlnUhGJZgcelNjop77Kl7Aj2wYYdLIToUwmTAqayviWuTbuHYoMq/exec";
+  var url = "https://script.google.com/macros/s/AKfycbwf_-zSUiG2oyo6OlnUhGJZgcelNjop77Kl7Aj2wYYdLIToUwmTAqayviWuTbuHYoMq/exec"; // URL ของคุณ
 
   var _Game_Interpreter_pluginCommand =
     Game_Interpreter.prototype.pluginCommand;
@@ -12,7 +11,6 @@
       var score = $gameVariables.value(1);
       var stage = $gameVariables.value(2);
 
-      // ✅ สร้าง URL พร้อมพารามิเตอร์
       var fullUrl =
         url +
         "?name=" +
@@ -22,11 +20,11 @@
         "&stage=" +
         encodeURIComponent(stage);
 
-      // ✅ ใช้วิธีโหลดภาพเพื่อบันทึกข้อมูล (ไม่โดน CORS)
+      // ✅ ใช้ <img> เพื่อเลี่ยง CORS
       var img = new Image();
       img.src = fullUrl;
 
-      console.log("📤 ส่งคะแนนสำเร็จ:", fullUrl);
+      console.log("📤 ส่งคะแนน:", fullUrl);
       $gameMessage.add("📤 กำลังส่งคะแนน...");
     }
   };
