@@ -2,50 +2,32 @@
   var url =
     "https://script.google.com/macros/s/AKfycbyx_JxnSV1etB4gkTMp2y0kEd5vMucC9-49UIh0tkkWnSb3K3iqTVcmDXoGhntUkqdd/exec";
 
-  // ✅ ใช้กับ RPG Maker MV
   var _Game_Interpreter_pluginCommand =
     Game_Interpreter.prototype.pluginCommand;
   Game_Interpreter.prototype.pluginCommand = function (command, args) {
     _Game_Interpreter_pluginCommand.call(this, command, args);
 
     if (command === "SendScore" && args[0] === "send") {
-      var playerName = $gameActors.actor(1).name(); // ดึงชื่อ Actor #1
-      var score = $gameVariables.value(1); // คะแนนในตัวแปร #1
-      var stage = $gameVariables.value(2); // ด่านในตัวแปร #2
-      var date = new Date().toLocaleString();
+      var playerName = $gameActors.actor(1).name();
+      var score = $gameVariables.value(1);
+      var stage = $gameVariables.value(2);
 
-      var data = {
-        name: playerName,
-        score: score,
-        stage: stage,
-        date: date,
-      };
+      // ✅ สร้าง URL พร้อมพารามิเตอร์
+      var fullUrl =
+        url +
+        "?name=" +
+        encodeURIComponent(playerName) +
+        "&score=" +
+        encodeURIComponent(score) +
+        "&stage=" +
+        encodeURIComponent(stage);
 
-      // ✅ แสดงผลใน Console
-      console.log("📊 กำลังส่งข้อมูล:", data);
+      // ✅ ใช้วิธีโหลดภาพเพื่อบันทึกข้อมูล (ไม่โดน CORS)
+      var img = new Image();
+      img.src = fullUrl;
 
-      // ✅ แสดงข้อความในเกม (Message Window)
-      $gameMessage.add("ชื่อ: " + playerName);
-      $gameMessage.add("คะแนน: " + score);
-      $gameMessage.add("ด่าน: " + stage);
-      $gameMessage.add("วันที่: " + date);
-
-      var xhr = new XMLHttpRequest();
-      xhr.open("POST", url, true);
-      xhr.setRequestHeader("Content-Type", "application/json");
-      xhr.timeout = 15000;
-
-      xhr.onload = function () {
-        // ได้ response กลับมาแน่นอน
-        if (xhr.status === 200) {
-          console.log("ส่งข้อมูลสำเร็จ!", xhr.responseText);
-          $gameMessage.add(" ส่งข้อมูลสำเร็จ!");
-        } else {
-          console.error("สถานะไม่ใช่ 200:", xhr.status, xhr.responseText);
-          $gameMessage.add(" ส่งข้อมูลล้มเหลว (" + xhr.status + ")");
-        }
-      };
-      xhr.send(JSON.stringify(data));
+      console.log("📤 ส่งคะแนนสำเร็จ:", fullUrl);
+      $gameMessage.add("📤 กำลังส่งคะแนน...");
     }
   };
 })();
