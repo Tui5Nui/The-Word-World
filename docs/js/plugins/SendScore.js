@@ -1,5 +1,5 @@
 (function () {
-  var url = "https://script.google.com/macros/s/AKfycbz-ssSu5Z5YLd94A-Uzr4MpuxjlP5HCHeGCHlbCsvTsJPHi6kSQds_LmJSon8qUrTrl/exec"; // URL ของคุณ
+  var url = "https://script.google.com/macros/s/AKfycbyjjORdElkQozZiKtmoU33ePtCKOOGNtrWGRZ_0ujssCMzsrpRPvAJWYrfMfphVWImH/exec"; // URL ของคุณ
 
   var _Game_Interpreter_pluginCommand =
     Game_Interpreter.prototype.pluginCommand;
