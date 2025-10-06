@@ -1,6 +1,6 @@
 (function () {
   var url =
-    "https://script.google.com/macros/s/AKfycbyx_JxnSV1etB4gkTMp2y0kEd5vMucC9-49UIh0tkkWnSb3K3iqTVcmDXoGhntUkqdd/exec";
+    "https://script.google.com/macros/s/AKfycbwf_-zSUiG2oyo6OlnUhGJZgcelNjop77Kl7Aj2wYYdLIToUwmTAqayviWuTbuHYoMq/exec";
 
   var _Game_Interpreter_pluginCommand =
     Game_Interpreter.prototype.pluginCommand;
