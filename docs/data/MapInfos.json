@@ -1,7 +1,7 @@
 [
 null,
 {"id":1,"expanded":false,"name":"เลือกตัวละคร","order":1,"parentId":0,"scrollX":1786.909090909091,"scrollY":1042.909090909091},
-{"id":2,"expanded":false,"name":"ห้องเรียน","order":2,"parentId":0,"scrollX":1786.909090909091,"scrollY":1042.909090909091},
-{"id":3,"expanded":false,"name":"ป่าพระดาบส ทดสอบ","order":4,"parentId":4,"scrollX":1786.909090909091,"scrollY":1042.909090909091},
-{"id":4,"expanded":true,"name":"ป่าพระดาบส","order":3,"parentId":0,"scrollX":1786.909090909091,"scrollY":1042.909090909091}
+{"id":2,"expanded":false,"name":"ห้องเรียน","order":2,"parentId":0,"scrollX":1782.5454545454545,"scrollY":1029.8181818181818},
+{"id":3,"expanded":false,"name":"ป่าพระดาบส ทดสอบ","order":4,"parentId":4,"scrollX":1104,"scrollY":1042},
+{"id":4,"expanded":true,"name":"ป่าพระดาบส","order":3,"parentId":0,"scrollX":1782.5454545454545,"scrollY":1029.8181818181818}
 ]
