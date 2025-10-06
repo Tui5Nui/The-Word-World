@@ -1,38 +1,27 @@
-(function() {
-    var url = "https://script.google.com/macros/s/AKfycbw2mjO0uRrcK7h-FjXxRqSA-Va1dpJP2H3vWSjRXCZDB2Iot3dOEVBAkaRwt8Bb-2Pr/exec";
+(function () {
+  var url = "https://script.google.com/macros/s/AKfycbyjjORdElkQozZiKtmoU33ePtCKOOGNtrWGRZ_0ujssCMzsrpRPvAJWYrfMfphVWImH/exec";
 
-    // ✅ ใช้กับ RPG Maker MV
-    var _Game_Interpreter_pluginCommand = Game_Interpreter.prototype.pluginCommand;
-    Game_Interpreter.prototype.pluginCommand = function(command, args) {
-        _Game_Interpreter_pluginCommand.call(this, command, args);
-        
-        if (command === "SendScore" && args[0] === "send") {
-            var playerName = $gameActors.actor(1).name();   // ดึงชื่อ Actor #1
-            var score = $gameVariables.value(1);           // คะแนนในตัวแปร #1
-            var stage = $gameVariables.value(2);           // ด่านในตัวแปร #2
-            var date = new Date().toLocaleString();
+  var _Game_Interpreter_pluginCommand = Game_Interpreter.prototype.pluginCommand;
+  Game_Interpreter.prototype.pluginCommand = function (command, args) {
+    _Game_Interpreter_pluginCommand.call(this, command, args);
 
-            var data = {
-                name: playerName,
-                score: score,
-                stage: stage,
-                date: date
-            };
+    if (command === "SendScore" && args[0] === "send") {
+      var playerName = $gameActors.actor(1).name();   // ชื่อผู้เล่น
+      var score = $gameVariables.value(1);            // คะแนนเก็บไว้ในตัวแปร #1
+      var stage = $gameVariables.value(2);            // ด่านเก็บไว้ในตัวแปร #2
 
-            // ✅ แสดงผลใน Console
-            console.log("📊 กำลังส่งข้อมูล:", data);
+      var fullUrl =
+        url +
+        "?name=" + encodeURIComponent(playerName) +
+        "&score=" + encodeURIComponent(score) +
+        "&stage=" + encodeURIComponent(stage);
 
-            // ✅ แสดงข้อความในเกม (Message Window)
-            $gameMessage.add("ชื่อ: " + playerName);
-            $gameMessage.add("คะแนน: " + score);
-            $gameMessage.add("ด่าน: " + stage);
-            $gameMessage.add("วันที่: " + date);
+      // ✅ ใช้ <img> เพื่อหลีกเลี่ยง CORS
+      var img = new Image();
+      img.src = fullUrl;
 
-            // ✅ ส่งไป Google Apps Script
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", url);
-            xhr.setRequestHeader("Content-Type", "application/json");
-            xhr.send(JSON.stringify(data));
-        }
-    };
+      console.log("📤 ส่งคะแนนไปยังชีต:", fullUrl);
+      $gameMessage.add("📤 กำลังส่งคะแนนของ " + playerName + "...");
+    }
+  };
 })();
