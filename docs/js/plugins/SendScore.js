@@ -1,5 +1,5 @@
 (function () {
-  var url = "https://script.google.com/macros/s/AKfycbyjjORdElkQozZiKtmoU33ePtCKOOGNtrWGRZ_0ujssCMzsrpRPvAJWYrfMfphVWImH/exec";
+  var url = "https://script.google.com/macros/s/AKfycbxyg2pu0MtcSEzEvDWxYUMaUn0faOH_4MGMa-w7q3ryhtYrFAJNQS_8oqqFAJGVcvLc/exec";
 
   var _Game_Interpreter_pluginCommand = Game_Interpreter.prototype.pluginCommand;
   Game_Interpreter.prototype.pluginCommand = function (command, args) {
@@ -16,7 +16,7 @@
         "&score=" + encodeURIComponent(score) +
         "&stage=" + encodeURIComponent(stage);
 
-      // ✅ ใช้ XMLHttpRequest เพื่ออ่านผลตอบกลับ (OK / Error)
+      // ใช้ XMLHttpRequest เพื่ออ่านผลตอบกลับ (OK / Error)
       var xhr = new XMLHttpRequest();
       xhr.open("GET", fullUrl, true);
       xhr.onload = function () {
@@ -31,8 +31,8 @@
       };
       xhr.send();
 
-      console.log("📤 ส่งคะแนนไปยังชีต:", fullUrl);
-      $gameMessage.add("📤 กำลังส่งคะแนนของ " + playerName + "...");
+      console.log("ส่งคะแนนไปยังชีต:", fullUrl);
+      $gameMessage.add("กำลังส่งคะแนนของ " + playerName + "...");
     }
   };
 })();
