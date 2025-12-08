@@ -2,7 +2,9 @@
 null,
 {"id":1,"expanded":false,"name":"เลือกตัวละคร","order":1,"parentId":0,"scrollX":1782.5454545454545,"scrollY":1029.8181818181818},
 {"id":2,"expanded":false,"name":"ห้องเรียน","order":2,"parentId":0,"scrollX":1782.5454545454545,"scrollY":1029.8181818181818},
-{"id":3,"expanded":true,"name":"ป่าพระดาบส ทดสอบ","order":5,"parentId":4,"scrollX":1088,"scrollY":1152},
-{"id":4,"expanded":true,"name":"ป่าพระดาบส","order":3,"parentId":0,"scrollX":1088,"scrollY":1046},
-{"id":5,"expanded":true,"name":"ป่าพระดาบส 2","order":4,"parentId":4,"scrollX":1104,"scrollY":1030}
+{"id":3,"expanded":true,"name":"ป่าพระดาบส ทดสอบ 1","order":5,"parentId":4,"scrollX":1782.5454545454545,"scrollY":1029.8181818181818},
+{"id":4,"expanded":true,"name":"ป่าพระดาบส","order":3,"parentId":0,"scrollX":1782.5454545454545,"scrollY":1029.8181818181818},
+{"id":5,"expanded":true,"name":"ป่าพระดาบส 2","order":4,"parentId":4,"scrollX":1782.5454545454545,"scrollY":1029.8181818181818},
+{"id":6,"expanded":true,"name":"ป่าพระดาบส ทดสอบ 2","order":6,"parentId":4,"scrollX":1782.5454545454545,"scrollY":1029.8181818181818},
+{"id":7,"expanded":false,"name":"ห้องสมุด","order":7,"parentId":0,"scrollX":970.8,"scrollY":825.5999999999999}
 ]
