@@ -6,7 +6,11 @@
     _Game_Interpreter_pluginCommand.call(this, command, args);
 
     if (command === "SendScore" && args[0] === "send") {
-      var playerName = $gameActors.actor(1).name();
+
+      // ดึงชื่อตัวละครตัวแรกในปาร์ตี้ ไม่ใช่ Actor(1)
+      var actor = $gameParty.members()[0];
+      var playerName = actor ? actor.name() : "ไม่ทราบชื่อ";
+
       var score = $gameVariables.value(1);
       var stage = $gameVariables.value(2);
 
@@ -16,7 +20,6 @@
         "&score=" + encodeURIComponent(score) +
         "&stage=" + encodeURIComponent(stage);
 
-      // ใช้ XMLHttpRequest เพื่ออ่านผลตอบกลับ (OK / Error)
       var xhr = new XMLHttpRequest();
       xhr.open("GET", fullUrl, true);
       xhr.onload = function () {
