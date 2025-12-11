@@ -15,7 +15,7 @@ null,
 {"id":13,"expanded":true,"name":"ตลาด ทดสอบ 1","order":13,"parentId":11,"scrollX":832,"scrollY":640},
 {"id":14,"expanded":true,"name":"ตลาด ทดสอบ 2","order":14,"parentId":11,"scrollX":1400.5714285714284,"scrollY":809.1428571428571},
 {"id":15,"expanded":true,"name":"หมู่บ้าน","order":15,"parentId":0,"scrollX":1386.8571428571427,"scrollY":894.8571428571428},
-{"id":16,"expanded":false,"name":"หมู่บ้าน 2","order":16,"parentId":15,"scrollX":1386.8571428571427,"scrollY":894.8571428571428},
+{"id":16,"expanded":false,"name":"หมู่บ้าน 2","order":16,"parentId":15,"scrollX":1088,"scrollY":892},
 {"id":17,"expanded":false,"name":"หมู่บ้าน ทดสอบ 1","order":17,"parentId":15,"scrollX":1386.8571428571427,"scrollY":809.1428571428571},
 {"id":18,"expanded":false,"name":"หมู่บ้าน ทดสอบ 2","order":18,"parentId":15,"scrollX":1386.8571428571427,"scrollY":841.7142857142857}
 ]
