@@ -13,5 +13,6 @@ var $plugins =
 {"name":"SendScore","status":true,"description":"","parameters":{}},
 {"name":"RemoveCommandRemember","status":true,"description":"","parameters":{}},
 {"name":"CoinHUD","status":true,"description":"แสดงเหรียญสะสมบนหน้าจอเสมอ (HUD เหรียญ)","parameters":{"Coin Variable ID":"3"}},
-{"name":"NPCNameTag","status":true,"description":"แสดงชื่อ NPC เหนือหัวจาก Note ของ Event","parameters":{}}
+{"name":"NPCNameTag","status":true,"description":"แสดงชื่อ NPC เหนือหัวจาก Note ของ Event","parameters":{}},
+{"name":"SmartHintPro","status":true,"description":"ระบบคำใบ้ 3 ชั้น เมื่อผู้เล่นยืนนิ่ง","parameters":{}}
 ];
