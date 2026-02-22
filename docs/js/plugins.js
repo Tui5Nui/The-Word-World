@@ -12,7 +12,7 @@ var $plugins =
 {"name":"MadeWithMv","status":true,"description":"Show a Splash Screen \"Made with MV\" and/or a Custom Splash Screen before going to main screen.","parameters":{"Show Made With MV":"true","Made with MV Image":"MadeWithMv","Show Custom Splash":"false","Custom Image":"","Fade Out Time":"120","Fade In Time":"120","Wait Time":"160"}},
 {"name":"SendScore","status":true,"description":"","parameters":{}},
 {"name":"RemoveCommandRemember","status":true,"description":"","parameters":{}},
-{"name":"CoinHUD","status":false,"description":"แสดงเหรียญสะสมบนหน้าจอเสมอ (HUD เหรียญ)","parameters":{"Coin Variable ID":"3"}},
+{"name":"CoinHUD","status":true,"description":"แสดงเหรียญสะสมบนหน้าจอเสมอ (HUD เหรียญ)","parameters":{"Coin Variable ID":"3"}},
 {"name":"NPCNameTag","status":true,"description":"แสดงชื่อ NPC เหนือหัวจาก Note ของ Event","parameters":{}},
 {"name":"SmartHintPro","status":true,"description":"ระบบคำใบ้ 3 ชั้น เมื่อผู้เล่นยืนนิ่ง","parameters":{}}
 ];
