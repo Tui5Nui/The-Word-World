@@ -1,13 +1,13 @@
 /*:
- * @plugindesc ระบบคำใบ้ 3 ชั้น แบบมืออาชีพ (Idle Hint System)
+ * @plugindesc ระบบคำใบ้ 3 ชั้น (Idle Hint System) เวอร์ชันแก้คัตซีน
  * @author คุณ
  */
 
 (function() {
 
-  // ===== ตั้งค่าเวลา (หน่วยเป็นเฟรม 60เฟรม = 1วินาที)
+  // ===== ตั้งค่าเวลา (60 เฟรม = 1 วินาที)
   var hintTimes = [360, 900, 1500]; 
-  // 7วิ → ใบ้เบา
+  // 6วิ → ใบ้เบา
   // 15วิ → ใบ้ชัด
   // 25วิ → กล่องข้อความใหญ่
 
@@ -81,7 +81,7 @@
 
     else if (this._phase === "wait") {
       this._timer++;
-      if (this._timer > 300) { // ค้าง ~5 วินาที
+      if (this._timer > 300) { // ค้าง ~5 วิ
         this._phase = "fadeOut";
       }
     }
@@ -95,11 +95,27 @@
     }
   };
 
+  // ===== รีเซ็ตเมื่อเปลี่ยนแมพ =====
+  var _Scene_Map_onMapLoaded = Scene_Map.prototype.onMapLoaded;
+  Scene_Map.prototype.onMapLoaded = function() {
+    _Scene_Map_onMapLoaded.call(this);
+    idleCounter = 0;
+    hintLevel = 0;
+  };
+
   // ===== Scene Update Hook =====
   var _Scene_Map_update = Scene_Map.prototype.update;
   Scene_Map.prototype.update = function() {
     _Scene_Map_update.call(this);
 
+    // ❗ ถ้ามี Event รัน หรือมีข้อความ → ไม่นับเวลา
+    if ($gameMap.isEventRunning() || $gameMessage.isBusy()) {
+      idleCounter = 0;
+      hintLevel = 0;
+      return;
+    }
+
+    // ถ้าผู้เล่นเดิน → รีเซ็ต
     if ($gamePlayer.isMoving()) {
       idleCounter = 0;
       hintLevel = 0;
