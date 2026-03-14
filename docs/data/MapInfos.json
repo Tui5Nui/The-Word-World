@@ -17,6 +17,5 @@ null,
 {"id":15,"expanded":true,"name":"หมู่บ้าน","order":15,"parentId":0,"scrollX":1786.909090909091,"scrollY":1042.909090909091},
 {"id":16,"expanded":false,"name":"หมู่บ้าน 2","order":16,"parentId":15,"scrollX":1786.909090909091,"scrollY":1042.909090909091},
 {"id":17,"expanded":false,"name":"หมู่บ้าน ทดสอบ 1","order":17,"parentId":15,"scrollX":1622,"scrollY":956},
-{"id":18,"expanded":true,"name":"หมู่บ้าน ทดสอบ 2","order":18,"parentId":15,"scrollX":1622,"scrollY":964},
-{"id":19,"expanded":true,"name":"แนะนำวิธีเล่น","order":19,"parentId":0,"scrollX":1786.909090909091,"scrollY":1042.909090909091}
+{"id":18,"expanded":true,"name":"หมู่บ้าน ทดสอบ 2","order":18,"parentId":15,"scrollX":1786.909090909091,"scrollY":1042.909090909091}
 ]
