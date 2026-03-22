@@ -16,5 +16,6 @@ var $plugins =
 {"name":"NPCNameTag","status":true,"description":"แสดงชื่อ NPC เหนือหัวจาก Note ของ Event","parameters":{}},
 {"name":"SmartHintPro","status":true,"description":"ระบบคำใบ้ 3 ชั้น เมื่อผู้เล่นยืนนิ่ง","parameters":{}},
 {"name":"TopLeftIconButtons","status":true,"description":"ปุ่มไอคอนมุมซ้ายบน (กลับหน้าหลัก + กลับแมพ)\r\nซ่อนระหว่างคัตซีน + มีเสียงตอนกด","parameters":{}},
-{"name":"TitleExtraMenuFinal","status":true,"description":"Title Menu: วิธีเล่น (Video) + รีเซ็ตเหรียญ + Confirm เสถียรขั้นสุด","parameters":{}}
+{"name":"TitleExtraMenuFinal","status":true,"description":"Title Menu: วิธีเล่น (Video) + Confirm เสถียร","parameters":{}},
+{"name":"ResetTextButton","status":true,"description":"ปุ่มรีเซ็ตเหรียญ (อยู่ข้าง CoinHUD อัตโนมัติ)","parameters":{"Coin Variable ID":"3","Show Switch ID":"11"}}
 ];

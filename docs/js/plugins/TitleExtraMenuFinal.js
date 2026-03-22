@@ -1,12 +1,9 @@
 /*:
- * @plugindesc Title Menu: วิธีเล่น (Video) + รีเซ็ตเหรียญ + Confirm เสถียรขั้นสุด
+ * @plugindesc Title Menu: วิธีเล่น (Video) + Confirm เสถียร
  * @author คุณ
  */
 
 (function() {
-
-var coinParams = PluginManager.parameters('CoinHUD');
-var coinVarId = Number(coinParams['Coin Variable ID'] || 3);
 
 let _confirmActive = false;
 
@@ -17,7 +14,6 @@ Window_TitleCommand.prototype.makeCommandList = function() {
     this.addCommand(TextManager.newGame,   "newGame");
     this.addCommand(TextManager.continue_, "continue", this.isContinueEnabled());
     this.addCommand("วิธีเล่น", "howToPlay");
-    this.addCommand("รีเซ็ตเหรียญ", "resetCoins");
     this.addCommand(TextManager.options,   "options");
 };
 
@@ -30,9 +26,6 @@ Scene_Title.prototype.createCommandWindow = function() {
 
     this._commandWindow.setHandler("howToPlay",
         this.commandHowToPlay.bind(this));
-
-    this._commandWindow.setHandler("resetCoins",
-        this.commandResetCoins.bind(this));
 };
 
 // =====================================================
@@ -61,21 +54,6 @@ Scene_Title.prototype.commandHowToPlay = function() {
                 this._commandWindow.activate();
             };
         }
-    });
-};
-
-// =====================================================
-// รีเซ็ตเหรียญ
-// =====================================================
-Scene_Title.prototype.commandResetCoins = function() {
-
-    this.showConfirm("ต้องการรีเซ็ตเหรียญทั้งหมดหรือไม่?", () => {
-
-        $gameVariables.setValue(coinVarId, 0);
-        SoundManager.playOk();
-
-        this.forceCloseConfirm();
-        this._commandWindow.activate();
     });
 };
 
@@ -160,7 +138,7 @@ Scene_Title.prototype.showConfirm = function(text, yesCallback) {
 };
 
 // =====================================================
-// ปิด Confirm แบบล้างจริง
+// ปิด Confirm
 // =====================================================
 Scene_Title.prototype.forceCloseConfirm = function() {
 
@@ -174,11 +152,6 @@ Scene_Title.prototype.forceCloseConfirm = function() {
         this._confirmTextWindow.close();
         this._confirmTextWindow.parent.removeChild(this._confirmTextWindow);
         this._confirmTextWindow = null;
-    }
-
-    if (this._dimSprite) {
-        this._dimSprite.parent.removeChild(this._dimSprite);
-        this._dimSprite = null;
     }
 
     _confirmActive = false;
